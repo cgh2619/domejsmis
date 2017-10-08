@@ -1,0 +1,6 @@
+server:
+    port: 8081
+    context-path: /dome
+    tomcat:
+        uri-encoding: UTF-8
+  

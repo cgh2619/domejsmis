@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <script type="text/javascript" src="js/jQuery-1.7.1.js"></script>
+
+  <script type="text/javascript">
+
+function userajax() {
+   var d ={};
+     d["pageNum"]="1";
+	 d["pageSize"]="10";
+     d["id"]="186";
+    var json = JSON.stringify(d);
+   $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:8082/api/user/showById",
+		data:json,
+        dataType: "json",
+		contentType: "application/json;charset=utf-8",
+        async: false,
+        cache: false,
+        success: function (data) {
+			alert(data);
+        }
+    });
+}
+  </script>
+ </head>
+ <body>
+  <button id="id"  onclick="userajax()">按钮</button>
+ </body>
+</html>
